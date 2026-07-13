@@ -360,10 +360,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (article) {
       const l = lang.current;
       document.title = article.title[l] + ' - Azizan Travel Lombok';
+      const header = document.getElementById('article-title-header');
+      if (header) header.textContent = article.title[l];
       const container = document.getElementById('article-content');
       if (container) {
         container.innerHTML = `
-          <h1 style="font-size:1.8rem;font-weight:800;margin-bottom:12px">${article.title[l]}</h1>
           <div style="display:flex;gap:16px;color:var(--text-light);font-size:0.85rem;margin-bottom:24px">
             <span><i class="far fa-calendar-alt"></i> ${article.date}</span>
           </div>
